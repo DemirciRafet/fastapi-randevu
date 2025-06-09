@@ -3,6 +3,7 @@ from datetime import datetime, timedelta
 from app.auth import router as auth_router
 from app.token import router as token_router
 from app.events import router as events_router
+from app.available_hours import router as available_hours_router
 
 app = FastAPI()
 
@@ -29,6 +30,7 @@ def get_available_hours():
 app.include_router(events_router)
 app.include_router(auth_router)
 app.include_router(token_router)
+app.include_router(available_hours_router)
 
 @app.get("/")
 def root():
